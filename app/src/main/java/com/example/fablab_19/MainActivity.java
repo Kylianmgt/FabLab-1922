@@ -1,6 +1,7 @@
 package com.example.fablab_19;
 
-import androidx.appcompat.app.AppCompatActivity;
+        import androidx.appcompat.app.AppCompatActivity;
+
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,6 +12,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.android.material.snackbar.Snackbar;
 
 import static android.view.WindowManager.LayoutParams.FLAG_FULLSCREEN;
+
 
 public class MainActivity extends AppCompatActivity {
     private static int SIGN_IN_REQUEST_CODE=1;
