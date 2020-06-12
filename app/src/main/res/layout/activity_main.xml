@@ -64,19 +64,9 @@ tools:context=".MainActivity">
         android:id="@+id/button_inscription"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Inscription" />
-
-    <Button
-        android:id="@+id/button_connexion"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Se connecter" />
+        android:text="Inscription / Se connecter" />
 
 
 </LinearLayout>
-
-
-
-
 
 </ScrollView>
