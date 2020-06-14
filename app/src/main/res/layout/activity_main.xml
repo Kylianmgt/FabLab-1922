@@ -24,7 +24,7 @@ tools:context=".MainActivity">
         android:fontFamily="@font/roboto_medium"
         android:gravity="center"
         android:text="FabLab-19"
-        android:textSize="40dp" />
+        android:textSize="40sp" />
 
     <ImageView
         android:id="@+id/img_fablab"
