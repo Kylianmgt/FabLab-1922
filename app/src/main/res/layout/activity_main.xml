@@ -62,18 +62,22 @@ tools:context=".MainActivity">
     </TableLayout>
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/thanks_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="Un grand merci aux créateurs:" />
+        android:text="Un grand merci aux créateurs:"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
     <TableLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        >
+
 
         <TableRow
             android:layout_width="fill_parent"
-            android:layout_height="fill_parent">
+            android:layout_height="fill_parent"
+            android:gravity="center">
 
             <de.hdodenhof.circleimageview.CircleImageView
                 xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -101,13 +105,50 @@ tools:context=".MainActivity">
                 app:civ_border_color="#FF000000"/>
 
         </TableRow>
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:gravity="center">
+
+        <TextView
+            android:id="@+id/batman_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="kikimgt" />
+        <TextView
+            android:id="@+id/jul_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Popole" />
+        <TextView
+            android:id="@+id/merkel_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="El Gibhardt" />
+
+        </TableRow>
     </TableLayout>
 
-    <Button
-        android:id="@+id/button_inscription"
+
+
+
+    <com.ornach.nobobutton.NoboButton
+        android:id="@+id/button_login_logout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Inscription / Se connecter" />
+        android:padding="10dp"
+        android:layout_marginBottom="20dp"
+        app:nb_text="S'inscrire / Se connecter"
+        app:nb_borderColor="#FFFFFF"
+        app:nb_borderWidth="2dp"
+        app:nb_backgroundColor="#EF3D56"
+        app:nb_focusColor="#B83CC3"
+        app:nb_textColor="#FFF"
+        app:nb_radius="5dp"
+       />
 
 
 </LinearLayout>

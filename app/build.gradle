@@ -32,6 +32,7 @@ dependencies {
     implementation 'com.firebaseui:firebase-ui-auth:6.2.0'
     implementation 'com.airbnb.android:lottie:3.4.1'
     implementation 'de.hdodenhof:circleimageview:3.1.0'
+    implementation 'com.ornach.nobobutton:nobobutton:1.6'
 
 
 

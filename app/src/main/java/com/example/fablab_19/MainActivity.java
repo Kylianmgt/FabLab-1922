@@ -12,8 +12,9 @@ import android.os.Bundle;
 import com.firebase.ui.auth.AuthUI;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.android.material.snackbar.Snackbar;
+        import com.ornach.nobobutton.NoboButton;
 
-import static android.view.WindowManager.LayoutParams.FLAG_FULLSCREEN;
+        import static android.view.WindowManager.LayoutParams.FLAG_FULLSCREEN;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -24,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
     //Elements du layout
     private ScrollView activity_main;
     private Button inscription_connexion;
+    private NoboButton login_logout;
 
 
     @Override
@@ -57,23 +59,25 @@ public class MainActivity extends AppCompatActivity {
 
        // Les variables du layout
         activity_main = (ScrollView) findViewById(R.id.activity_main);
-        inscription_connexion = (Button) findViewById(R.id.button_inscription);
-
+        login_logout = (NoboButton) findViewById((R.id.button_login_logout));
 
 
         //Inscription via authentification Google (via FirebaseAuth)
-        inscription_connexion.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (FirebaseAuth.getInstance().getCurrentUser()==null){
-                    startActivityForResult(AuthUI.getInstance().createSignInIntentBuilder().build(), SIGN_IN_REQUEST_CODE);
-                }
-                else{
-                    Snackbar.make(activity_main,"Welcome "+FirebaseAuth.getInstance().getCurrentUser().getEmail(),Snackbar.LENGTH_SHORT).show();
-                    //Load content
-                }
-            }
-        });
+        login_logout.setOnClickListener(new View.OnClickListener() {
+    @Override
+             public void onClick(View v) {
+                 if (FirebaseAuth.getInstance().getCurrentUser()==null){
+                      startActivityForResult(AuthUI.getInstance().createSignInIntentBuilder().build(), SIGN_IN_REQUEST_CODE);
+                     }
+                 else{
+                     Snackbar.make(activity_main,"Welcome "+FirebaseAuth.getInstance().getCurrentUser().getEmail(),Snackbar.LENGTH_SHORT).show();
+            //Load content
+        }
+
+    }
+});
+
+
 
     }
 }
