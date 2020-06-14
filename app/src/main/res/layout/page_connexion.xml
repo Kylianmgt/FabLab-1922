@@ -19,30 +19,30 @@
         android:fontFamily="@font/roboto_medium"
         android:gravity="center"
         android:text="@string/title_app"
-        android:textSize="40dp" />
+        android:textSize="40sp" />
 
     <TableLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-        <TableRow
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent">
+
+        <TableRow>
 
             <Button
                 android:id="@+id/button_passer_commande"
-                android:layout_width="140dp"
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent"
+                android:padding="0dp"
                 android:text="@string/passer_commande"></Button>
 
             <Button
                 android:id="@+id/button_mes_commandes"
-                android:layout_width="140dp"
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:text="@string/mes_commandes"></Button>
 
             <Button
                 android:id="@+id/button_se_deconnecter"
-                android:layout_width="140dp"
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:text="@string/se_deconnecter"></Button>
         </TableRow>
