@@ -38,6 +38,8 @@ public class MainActivity extends AppCompatActivity {
             if(resultCode == RESULT_OK)
             {
                 Snackbar.make(activity_main,"Vous êtes bien connecté ! Bienvenue !", Snackbar.LENGTH_SHORT).show();
+                Intent homeActivity = new Intent( MainActivity.this, HomeActivity.class );
+                startActivity(homeActivity);
 
             }
             else{
@@ -64,34 +66,22 @@ public class MainActivity extends AppCompatActivity {
 
         //Inscription via authentification Google (via FirebaseAuth)
         login_logout.setOnClickListener(new View.OnClickListener() {
-            @Override
-                     public void onClick(View v) {
-                         if (FirebaseAuth.getInstance().getCurrentUser()==null){
-                              startActivityForResult(AuthUI.getInstance().createSignInIntentBuilder().build(), SIGN_IN_REQUEST_CODE);
-                             }
-                         else{
-                            Snackbar.make(activity_main,"Welcome "+FirebaseAuth.getInstance().getCurrentUser().getEmail(),Snackbar.LENGTH_SHORT).show();
-                             Intent i = new Intent(MainActivity.this,MainActivity2.class);
-                             startActivity(i);
-                    //Load content
+    @Override
+             public void onClick(View v) {
+                 if (FirebaseAuth.getInstance().getCurrentUser()==null){
+                      startActivityForResult(AuthUI.getInstance().createSignInIntentBuilder().build(), SIGN_IN_REQUEST_CODE);
+                     }
+                 else{
+                     Snackbar.make(activity_main,"Welcome "+FirebaseAuth.getInstance().getCurrentUser().getEmail(),Snackbar.LENGTH_SHORT).show();
+                     Intent homeActivity = new Intent( MainActivity.this, HomeActivity.class );
+                     startActivity(homeActivity);
 
-                }
-            }
+        }
 
-        });
-
-        /*
-        login_logout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(MainActivity.this,MainActivity2.class);
-                startActivity(i);
-            }
-        });*/
+    }
+});
 
 
 
     }
-
-
 }
