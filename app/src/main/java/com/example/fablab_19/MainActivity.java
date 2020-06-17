@@ -38,6 +38,8 @@ public class MainActivity extends AppCompatActivity {
             if(resultCode == RESULT_OK)
             {
                 Snackbar.make(activity_main,"Vous êtes bien connecté ! Bienvenue !", Snackbar.LENGTH_SHORT).show();
+                Intent homeActivity = new Intent( MainActivity.this, HomeActivity.class );
+                startActivity(homeActivity);
 
             }
             else{
@@ -71,7 +73,9 @@ public class MainActivity extends AppCompatActivity {
                      }
                  else{
                      Snackbar.make(activity_main,"Welcome "+FirebaseAuth.getInstance().getCurrentUser().getEmail(),Snackbar.LENGTH_SHORT).show();
-            //Load content
+                     Intent homeActivity = new Intent( MainActivity.this, HomeActivity.class );
+                     startActivity(homeActivity);
+
         }
 
     }
