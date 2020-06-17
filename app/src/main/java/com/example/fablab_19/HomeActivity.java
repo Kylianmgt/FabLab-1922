@@ -17,11 +17,12 @@ import android.widget.TextView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
+import com.ornach.nobobutton.NoboButton;
 
 import static android.view.WindowManager.LayoutParams.FLAG_FULLSCREEN;
 
 public class HomeActivity extends AppCompatActivity {
-    private Button createRequestButton;
+    private NoboButton createRequestButton;
     private FirebaseListAdapter<Request> adapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,7 +32,7 @@ public class HomeActivity extends AppCompatActivity {
         getSupportActionBar().hide();
         getWindow().setFlags(FLAG_FULLSCREEN, FLAG_FULLSCREEN);
 
-        createRequestButton = findViewById(R.id.create_request_button);
+        createRequestButton = findViewById(R.id.button_passer_commande);
 
         createRequestButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -48,7 +49,7 @@ public class HomeActivity extends AppCompatActivity {
 
     private void showMyRequest(){
         ListView listOfRequest = findViewById(R.id.list_of_request);
-      Query query = FirebaseDatabase.getInstance().getReference("Request");
+      Query query = FirebaseDatabase.getInstance().getReference("Request").orderByChild("email").equalTo(FirebaseAuth.getInstance().getCurrentUser().getEmail());
        FirebaseListOptions<Request> options = new FirebaseListOptions.Builder<Request>()
                .setQuery(query, Request.class)
                .setLayout(R.layout.card)
@@ -61,7 +62,7 @@ public class HomeActivity extends AppCompatActivity {
                requestName = (TextView) v.findViewById(R.id.card_user);
                requestCompany = (TextView) v.findViewById(R.id.card_title);
                companyCity = (TextView) v.findViewById(R.id.card_city);
-               requestStatus = (TextView) v.findViewById(R.id.card_title);
+               requestStatus = (TextView) v.findViewById(R.id.card_status);
 
                requestResume.setText(model.getRequestResume());
                requestName.setText(model.getName());
