@@ -133,8 +133,6 @@ tools:context=".MainActivity">
     </TableLayout>
 
 
-
-
     <com.ornach.nobobutton.NoboButton
         android:id="@+id/button_login_logout"
         android:layout_width="match_parent"
@@ -149,6 +147,7 @@ tools:context=".MainActivity">
         app:nb_textColor="#FFF"
         app:nb_radius="5dp"
        />
+
 
 
 </LinearLayout>
