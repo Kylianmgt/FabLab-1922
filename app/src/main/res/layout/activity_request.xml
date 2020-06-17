@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RequestActivity">
+
+    <TextView
+        android:id="@+id/request_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/baloo_thambi"
+        android:gravity="center"
+        android:text="Je crée ma demande:"
+        android:textSize="36sp" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/company_name_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/request_title">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nom de l'entreprise" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/city_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/company_name_input">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Ville" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <EditText
+        android:id="@+id/postal_address_input"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/city_input"
+        android:ems="10"
+        android:hint="Code Postal"
+        android:inputType="textPostalAddress" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/resume_input"
+        android:layout_width="match_parent"
+        android:layout_height="254dp"
+        android:layout_below="@id/postal_address_input"
+        android:hint="Faites un cours texte sur ce dont vous avez besoin">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.ornach.nobobutton.NoboButton
+        android:id="@+id/send_request_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/resume_input"
+        android:layout_marginBottom="20dp"
+        android:padding="10dp"
+        app:nb_backgroundColor="#EF3D56"
+        app:nb_borderColor="#FFFFFF"
+        app:nb_borderWidth="2dp"
+        app:nb_focusColor="#B83CC3"
+        app:nb_radius="5dp"
+        app:nb_text="Je soumets ma demande"
+        app:nb_textColor="#FFF" />
+
+</RelativeLayout>
