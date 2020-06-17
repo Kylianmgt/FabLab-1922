@@ -6,4 +6,5 @@
     <string name="mes_commandes">Mes commandes</string>
     <string name="se_deconnecter">Se déconnecter</string>
     <string name="inscrption_connexion">Inscription / Se connecter</string>
+    <string name="text_page_connexion">Maintenant vous êtes connecter vous pousser donc accéder à d autres fonctionnalités du site voir les boutons au dessus</string>
 </resources>
