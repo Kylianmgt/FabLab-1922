@@ -75,12 +75,9 @@ public class MainActivity extends AppCompatActivity {
                      Snackbar.make(activity_main,"Welcome "+FirebaseAuth.getInstance().getCurrentUser().getEmail(),Snackbar.LENGTH_SHORT).show();
                      Intent homeActivity = new Intent( MainActivity.this, HomeActivity.class );
                      startActivity(homeActivity);
-
         }
-
     }
 });
-
 
 
     }

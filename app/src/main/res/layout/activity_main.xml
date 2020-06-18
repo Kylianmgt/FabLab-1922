@@ -148,6 +148,20 @@ tools:context=".MainActivity">
         app:nb_radius="5dp"
        />
 
+    <com.ornach.nobobutton.NoboButton
+        android:id="@+id/button_info_fablab"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:layout_marginBottom="20dp"
+        app:nb_text="Information fablab"
+        app:nb_borderColor="#FFFFFF"
+        app:nb_borderWidth="2dp"
+        app:nb_backgroundColor="#EF3D56"
+        app:nb_focusColor="#B83CC3"
+        app:nb_textColor="#FFF"
+        app:nb_radius="5dp"
+        />
 
 
 </LinearLayout>
