@@ -24,7 +24,7 @@ tools:context=".MainActivity">
         android:fontFamily="@font/roboto_medium"
         android:gravity="center"
         android:text="FabLab-19"
-        android:textSize="40dp" />
+        android:textSize="40sp" />
 
     <ImageView
         android:id="@+id/img_fablab"
@@ -57,26 +57,110 @@ tools:context=".MainActivity">
                 android:layout_width="188dp"
                 android:layout_height="match_parent"
                 android:src="@drawable/ue" />
+
         </TableRow>
     </TableLayout>
 
-    <Button
-        android:id="@+id/button_inscription"
+    <TextView
+        android:id="@+id/thanks_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Inscription" />
-
-    <Button
-        android:id="@+id/button_connexion"
+        android:gravity="center"
+        android:text="Un grand merci aux créateurs:"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
+    <TableLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Se connecter" />
+        >
 
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:gravity="center">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/profile_image"
+                android:layout_width="96dp"
+                android:layout_height="96dp"
+                android:src="@drawable/batman"
+                app:civ_border_width="2dp"
+                app:civ_border_color="#FF000000"/>
+            <de.hdodenhof.circleimageview.CircleImageView
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/profile_image2"
+                android:layout_width="96dp"
+                android:layout_height="96dp"
+                android:src="@drawable/jul"
+                app:civ_border_width="2dp"
+                app:civ_border_color="#FF000000"/>
+            <de.hdodenhof.circleimageview.CircleImageView
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/profile_image3"
+                android:layout_width="96dp"
+                android:layout_height="96dp"
+                android:src="@drawable/merkel"
+                app:civ_border_width="2dp"
+                app:civ_border_color="#FF000000"/>
+
+        </TableRow>
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:gravity="center">
+
+        <TextView
+            android:id="@+id/batman_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="kikimgt" />
+        <TextView
+            android:id="@+id/jul_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Popole" />
+        <TextView
+            android:id="@+id/merkel_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="El Gibhardt" />
+
+        </TableRow>
+    </TableLayout>
+
+    <com.ornach.nobobutton.NoboButton
+        android:id="@+id/button_login_logout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        app:nb_text="S'inscrire / Se connecter"
+        app:nb_borderColor="#FFFFFF"
+        app:nb_borderWidth="2dp"
+        app:nb_backgroundColor="#EF3D56"
+        app:nb_focusColor="#B83CC3"
+        app:nb_textColor="#FFF"
+        app:nb_radius="5dp"
+        />
+
+
+    <com.ornach.nobobutton.NoboButton
+        android:id="@+id/button_info_fablab"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:padding="10dp"
+        app:nb_backgroundColor="#EF3D56"
+        app:nb_borderColor="#FFFFFF"
+        app:nb_borderWidth="2dp"
+        app:nb_focusColor="#B83CC3"
+        app:nb_radius="5dp"
+        app:nb_text="Informations Fablab"
+        app:nb_textColor="#FFF" />
 
 </LinearLayout>
-
-
-
-
 
 </ScrollView>
