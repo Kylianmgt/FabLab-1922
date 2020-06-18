@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:dist="http://schemas.android.com/apk/distribution"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.fablab_19">
 
     <dist:module dist:instant="true" />
@@ -15,6 +16,8 @@
         <activity android:name=".ContactActivity"></activity>
         <activity android:name=".RequestActivity" />
         <activity android:name=".HomeActivity" />
+        <activity android:name=".FabLabInfoActivity"
+             />
         <activity android:name=".LoadingScreenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
