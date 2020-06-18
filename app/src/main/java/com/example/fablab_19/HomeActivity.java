@@ -98,6 +98,9 @@ public class HomeActivity extends AppCompatActivity {
        };
        listOfRequest.setAdapter(adapter);
     }
+    private void customizeHome(){
+        homeTitle.setText("Bienvenue "+FirebaseAuth.getInstance().getCurrentUser().getDisplayName());
+    }
     @Override
     protected void onStart() {
         super.onStart();
