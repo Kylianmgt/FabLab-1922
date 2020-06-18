@@ -7,6 +7,7 @@ import com.example.fablab_19.Objects.Request;
 import com.firebase.ui.database.FirebaseListAdapter;
 import com.firebase.ui.database.FirebaseListOptions;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.text.format.DateFormat;
 import android.view.View;
@@ -22,7 +23,10 @@ import com.ornach.nobobutton.NoboButton;
 import static android.view.WindowManager.LayoutParams.FLAG_FULLSCREEN;
 
 public class HomeActivity extends AppCompatActivity {
-    private NoboButton createRequestButton;
+
+    private NoboButton createRequestButton, contactButton;
+    private TextView homeTitle;
+
     private FirebaseListAdapter<Request> adapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +38,10 @@ public class HomeActivity extends AppCompatActivity {
 
         createRequestButton = findViewById(R.id.button_passer_commande);
 
+        contactButton = findViewById(R.id.contact_button);
+        homeTitle = findViewById(R.id.home_title);
+
+
         createRequestButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -43,6 +51,14 @@ public class HomeActivity extends AppCompatActivity {
         });
         showMyRequest();
 
+        customizeHome();
+        contactButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent contactActivity = new Intent( HomeActivity.this, ContactActivity.class);
+                startActivity(contactActivity);
+            }
+        });
 
 
     }
@@ -68,6 +84,13 @@ public class HomeActivity extends AppCompatActivity {
                requestName.setText(model.getName());
                requestCompany.setText(model.getCompanyName());
                companyCity.setText(model.getCompanyCity());
+
+              if (model.getStatus() == "En cours de traitement"){
+                  requestStatus.setTextColor(Color.GREEN);
+              }
+              else{
+                  requestStatus.setTextColor(Color.RED);
+              }
                requestStatus.setText(model.getStatus());
                //messageTime.setText(DateFormat.format("dd-MM-yyyy (HH:mm:ss)", model.getMessageTime()));
 
