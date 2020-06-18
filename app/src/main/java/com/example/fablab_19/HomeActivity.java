@@ -26,7 +26,6 @@ public class HomeActivity extends AppCompatActivity {
 
     private NoboButton createRequestButton, contactButton;
     private TextView homeTitle;
-
     private FirebaseListAdapter<Request> adapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -76,6 +75,7 @@ public class HomeActivity extends AppCompatActivity {
                TextView requestResume, requestName, requestDate, requestCompany, companyCity, requestStatus;
                requestResume = (TextView) v.findViewById(R.id.card_resume);
                requestName = (TextView) v.findViewById(R.id.card_user);
+               requestDate = (TextView) v.findViewById(R.id.card_start);
                requestCompany = (TextView) v.findViewById(R.id.card_title);
                companyCity = (TextView) v.findViewById(R.id.card_city);
                requestStatus = (TextView) v.findViewById(R.id.card_status);
@@ -84,6 +84,7 @@ public class HomeActivity extends AppCompatActivity {
                requestName.setText(model.getName());
                requestCompany.setText(model.getCompanyName());
                companyCity.setText(model.getCompanyCity());
+               requestDate.setText(DateFormat.format("dd-MM-yyyy (HH:mm:ss)", model.getDate()));
 
               if (model.getStatus() == "En cours de traitement"){
                   requestStatus.setTextColor(Color.GREEN);
