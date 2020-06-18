@@ -43,6 +43,8 @@ public class HomeActivity extends AppCompatActivity {
         });
         showMyRequest();
 
+
+
     }
 
     private void showMyRequest(){
@@ -78,6 +80,7 @@ public class HomeActivity extends AppCompatActivity {
         super.onStart();
         adapter.startListening();
     }
+
 
     @Override
     protected void onStop() {
