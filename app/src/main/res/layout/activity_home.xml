@@ -60,7 +60,7 @@
                 app:nb_textColor="#FFF" />
 
             <com.ornach.nobobutton.NoboButton
-                android:id="@+id/deconnexion"
+                android:id="@+id/contact_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="20dp"
@@ -70,7 +70,7 @@
                 app:nb_borderWidth="2dp"
                 app:nb_focusColor="#B83CC3"
                 app:nb_radius="5dp"
-                app:nb_text="@string/se_deconnecter"
+                app:nb_text="@string/contact"
                 app:nb_textColor="#FFF" />
         </TableRow>
     </TableLayout>
