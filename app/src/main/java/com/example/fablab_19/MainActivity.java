@@ -6,7 +6,6 @@ package com.example.fablab_19;
 import android.content.Intent;
 import android.os.Bundle;
         import android.view.View;
-        import android.widget.Button;
         import android.widget.ScrollView;
 
 import com.firebase.ui.auth.AuthUI;
@@ -24,8 +23,10 @@ public class MainActivity extends AppCompatActivity {
 
     //Elements du layout
     private ScrollView activity_main;
-    private Button inscription_connexion;
+    //private Button inscription_connexion;
     private NoboButton login_logout;
+    private NoboButton info_fablab;
+
 
 
     @Override
@@ -62,6 +63,7 @@ public class MainActivity extends AppCompatActivity {
        // Les variables du layout
         activity_main = (ScrollView) findViewById(R.id.activity_main);
         login_logout = (NoboButton) findViewById((R.id.button_login_logout));
+        info_fablab = (NoboButton) findViewById((R.id.button_info_fablab));
 
 
         //Inscription via authentification Google (via FirebaseAuth)
@@ -79,6 +81,12 @@ public class MainActivity extends AppCompatActivity {
     }
 });
 
-
+        info_fablab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent info_Fab_lab = new Intent(MainActivity.this, Fab_lab_info.class);
+                startActivity(info_Fab_lab);
+            }
+        });
     }
 }
