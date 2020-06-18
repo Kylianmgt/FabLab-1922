@@ -23,6 +23,7 @@ import static android.view.WindowManager.LayoutParams.FLAG_FULLSCREEN;
 
 public class HomeActivity extends AppCompatActivity {
     private NoboButton createRequestButton;
+    private TextView homeTitle;
     private FirebaseListAdapter<Request> adapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +34,7 @@ public class HomeActivity extends AppCompatActivity {
         getWindow().setFlags(FLAG_FULLSCREEN, FLAG_FULLSCREEN);
 
         createRequestButton = findViewById(R.id.button_passer_commande);
+        homeTitle = findViewById(R.id.home_title);
 
         createRequestButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -42,7 +44,7 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
         showMyRequest();
-
+        customizeHome();
 
 
     }
@@ -63,17 +65,23 @@ public class HomeActivity extends AppCompatActivity {
                requestCompany = (TextView) v.findViewById(R.id.card_title);
                companyCity = (TextView) v.findViewById(R.id.card_city);
                requestStatus = (TextView) v.findViewById(R.id.card_status);
+               requestDate = (TextView) v.findViewById(R.id.card_start);
 
                requestResume.setText(model.getRequestResume());
                requestName.setText(model.getName());
                requestCompany.setText(model.getCompanyName());
                companyCity.setText(model.getCompanyCity());
                requestStatus.setText(model.getStatus());
-               //messageTime.setText(DateFormat.format("dd-MM-yyyy (HH:mm:ss)", model.getMessageTime()));
+               requestDate.setText(DateFormat.format("dd-MM-yyyy (HH:mm:ss)", model.getDate()));
 
            }
        };
        listOfRequest.setAdapter(adapter);
+    }
+
+
+    private void customizeHome(){
+        homeTitle.setText("Bienvenue "+FirebaseAuth.getInstance().getCurrentUser().getDisplayName());
     }
     @Override
     protected void onStart() {
