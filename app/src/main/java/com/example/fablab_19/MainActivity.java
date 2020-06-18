@@ -84,7 +84,7 @@ public class MainActivity extends AppCompatActivity {
         info_fablab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent info_Fab_lab = new Intent(MainActivity.this, Fab_lab_info.class);
+                Intent info_Fab_lab = new Intent(MainActivity.this, FabLabInfoActivity.class);
                 startActivity(info_Fab_lab);
             }
         });

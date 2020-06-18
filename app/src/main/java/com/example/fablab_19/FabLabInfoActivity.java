@@ -11,7 +11,7 @@ import com.firebase.ui.database.FirebaseListOptions;
 
 import static android.view.WindowManager.LayoutParams.FLAG_FULLSCREEN;
 
-public class Fab_lab_info extends AppCompatActivity {
+public class FabLabInfoActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
