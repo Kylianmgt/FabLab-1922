@@ -23,8 +23,10 @@ import com.ornach.nobobutton.NoboButton;
 import static android.view.WindowManager.LayoutParams.FLAG_FULLSCREEN;
 
 public class HomeActivity extends AppCompatActivity {
+
     private NoboButton createRequestButton, contactButton;
     private TextView homeTitle;
+
     private FirebaseListAdapter<Request> adapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,8 +37,10 @@ public class HomeActivity extends AppCompatActivity {
         getWindow().setFlags(FLAG_FULLSCREEN, FLAG_FULLSCREEN);
 
         createRequestButton = findViewById(R.id.button_passer_commande);
+
         contactButton = findViewById(R.id.contact_button);
         homeTitle = findViewById(R.id.home_title);
+
 
         createRequestButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -46,6 +50,7 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
         showMyRequest();
+
         customizeHome();
         contactButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -54,6 +59,7 @@ public class HomeActivity extends AppCompatActivity {
                 startActivity(contactActivity);
             }
         });
+
 
     }
 
@@ -73,7 +79,6 @@ public class HomeActivity extends AppCompatActivity {
                requestCompany = (TextView) v.findViewById(R.id.card_title);
                companyCity = (TextView) v.findViewById(R.id.card_city);
                requestStatus = (TextView) v.findViewById(R.id.card_status);
-               requestDate = (TextView) v.findViewById(R.id.card_start);
 
                requestResume.setText(model.getRequestResume());
                requestName.setText(model.getName());
@@ -87,16 +92,11 @@ public class HomeActivity extends AppCompatActivity {
                   requestStatus.setTextColor(Color.RED);
               }
                requestStatus.setText(model.getStatus());
-               requestDate.setText(DateFormat.format("dd-MM-yyyy (HH:mm:ss)", model.getDate()));
+               //messageTime.setText(DateFormat.format("dd-MM-yyyy (HH:mm:ss)", model.getMessageTime()));
 
            }
        };
        listOfRequest.setAdapter(adapter);
-    }
-
-
-    private void customizeHome(){
-        homeTitle.setText("Bienvenue "+FirebaseAuth.getInstance().getCurrentUser().getDisplayName());
     }
     @Override
     protected void onStart() {

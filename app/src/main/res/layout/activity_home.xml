@@ -42,7 +42,9 @@
                 app:nb_textColor="#FFF" />
 
             <com.ornach.nobobutton.NoboButton
-                android:id="@+id/contact_button"
+
+                android:id="@+id/button_info_fablab"
+
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="20dp"
@@ -52,7 +54,9 @@
                 app:nb_borderWidth="2dp"
                 app:nb_focusColor="#B83CC3"
                 app:nb_radius="5dp"
-                app:nb_text="@string/contact"
+
+                app:nb_text="Informations Fablab"
+
                 app:nb_textColor="#FFF" />
 
             <com.ornach.nobobutton.NoboButton
@@ -76,7 +80,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/nav_buttons">
-
     </ListView>
 
 
