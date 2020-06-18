@@ -13,12 +13,16 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.FirebaseDatabase;
 import com.ornach.nobobutton.NoboButton;
 
+import java.util.Date;
+
+import static android.view.WindowManager.LayoutParams.FLAG_FULLSCREEN;
+
 public class RequestActivity extends AppCompatActivity {
 private NoboButton sendRequestButton;
 private TextInputLayout cityInput;
     private TextInputLayout companyNameInput;
     private EditText postalCodeInput;
-    private TextInputLayout resumeInput;
+    private TextInputLayout resumeInput, phoneNumber;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +34,10 @@ private TextInputLayout cityInput;
         companyNameInput = findViewById(R.id.company_name_input);
         postalCodeInput = findViewById(R.id.postal_address_input);
         resumeInput = findViewById(R.id.resume_input);
+        phoneNumber = findViewById(R.id.phone_input);
 
+        getSupportActionBar().hide();
+        getWindow().setFlags(FLAG_FULLSCREEN, FLAG_FULLSCREEN);
 
 
 
@@ -38,6 +45,7 @@ private TextInputLayout cityInput;
             @Override
             public void onClick(View v) {
                 Request request = new Request();
+                long now = new Date().getTime();
                 request.setCompanyCity(cityInput.getEditText().getText().toString());
                 request.setCompanyName(companyNameInput.getEditText().getText().toString());
                 request.setCompanyPostalCode(postalCodeInput.getText().toString());
@@ -45,6 +53,8 @@ private TextInputLayout cityInput;
                 request.setName(FirebaseAuth.getInstance().getCurrentUser().getDisplayName());
                 request.setEmail(FirebaseAuth.getInstance().getCurrentUser().getEmail());
                 request.setStatus("En cours de traitement");
+                request.setPhoneNumber(phoneNumber.getEditText().getText().toString());
+                request.setDate(now);
                 FirebaseDatabase.getInstance().getReference("Request").push().setValue(request);
                 finish();
             }
