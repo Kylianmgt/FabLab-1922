@@ -21,7 +21,7 @@ import static android.view.WindowManager.LayoutParams.FLAG_FULLSCREEN;
 public class FabLabInfoActivity extends AppCompatActivity {
     private static DatabaseReference dbref, dbref2;
     private TextView nbCommande, nbCommandeFinis;
-    private String nbCommandeEnCours, nbCommandeFini;
+   // private String nbCommandeEnCours, nbCommandeFini;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,7 +42,9 @@ public class FabLabInfoActivity extends AppCompatActivity {
         dbref.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                nbCommandeEnCours = dataSnapshot.getValue().toString();
+                String nbCommandeEnCours = dataSnapshot.getValue().toString();
+                //nbCommande.setText( nbCommandeEnCours );
+                nbCommande.setText("Nous avons actuellement " + nbCommandeEnCours + " commandes en cours");
             }
 
             @Override
@@ -53,7 +55,9 @@ public class FabLabInfoActivity extends AppCompatActivity {
         dbref2.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                nbCommandeFini = dataSnapshot.getValue().toString();
+               String nbCommandeFini = dataSnapshot.getValue().toString();
+               //nbCommandeFinis.setText(nbCommandeFini);
+                nbCommandeFinis.setText("Nous avons actuellement "+ nbCommandeFini + " commandes fini");
             }
 
             @Override
@@ -61,7 +65,7 @@ public class FabLabInfoActivity extends AppCompatActivity {
             }
         });
 
-        nbCommande.setText("Nous avons actuellement " + nbCommandeEnCours + " commandes en cours");
-        nbCommandeFinis.setText("Nous avons actuellement " + nbCommandeFini + " commandes finis");
+        //nbCommande.setText("Nous avons actuellement " + nbCommandeEnCours + " commandes en cours");
+       // nbCommandeFinis.setText("Nous avons actuellement " + nbCommandeFini + " commandes finis");
     }
 }
