@@ -21,7 +21,6 @@ import static android.view.WindowManager.LayoutParams.FLAG_FULLSCREEN;
 public class FabLabInfoActivity extends AppCompatActivity {
     private static DatabaseReference dbref, dbref2;
     private TextView nbCommande, nbCommandeFinis;
-   // private String nbCommandeEnCours, nbCommandeFini;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
