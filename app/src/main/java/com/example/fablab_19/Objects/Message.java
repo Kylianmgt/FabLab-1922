@@ -7,6 +7,26 @@ public class Message {
     private String userName;
     private long messageTime;
 
+    public String getuId() {
+        return uId;
+    }
+
+    public void setuId(String uId) {
+        this.uId = uId;
+    }
+
+    private String uId;
+
+    public String getUserEmail() {
+        return userEmail;
+    }
+
+    public void setUserEmail(String userEmail) {
+        this.userEmail = userEmail;
+    }
+
+    private String userEmail;
+
 
     public String getMessageText() {
         return messageText;
@@ -35,10 +55,12 @@ public class Message {
 
 
 
-    public Message(String messageText, String userName){
+    public Message(String messageText, String userName, String userEmail, String uId){
         this.messageText = messageText;
         this.userName = userName;
         this.messageTime = new Date().getTime();
+        this.userEmail = userEmail;
+        this.uId = uId;
     }
     public Message(){
 

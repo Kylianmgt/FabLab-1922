@@ -42,7 +42,7 @@ public class ContactActivity extends AppCompatActivity {
         submitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                FirebaseDatabase.getInstance().getReference("Contact").child(FirebaseAuth.getInstance().getCurrentUser().getUid()).push().setValue(new Message(msgInput.getText().toString(), FirebaseAuth.getInstance().getCurrentUser().getDisplayName()));
+                FirebaseDatabase.getInstance().getReference("Contact").child(FirebaseAuth.getInstance().getCurrentUser().getUid()).push().setValue(new Message(msgInput.getText().toString(), FirebaseAuth.getInstance().getCurrentUser().getDisplayName(), FirebaseAuth.getInstance().getCurrentUser().getEmail(), FirebaseAuth.getInstance().getUid()));
                 msgInput.requestFocus();
             }
         });
