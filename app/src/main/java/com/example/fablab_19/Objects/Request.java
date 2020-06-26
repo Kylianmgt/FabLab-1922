@@ -16,6 +16,16 @@ public class Request {
     private long date;
     private String requestResume;
 
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
+    }
+
+    private String userId;
+
     public String getPhoneNumber() {
         return phoneNumber;
     }

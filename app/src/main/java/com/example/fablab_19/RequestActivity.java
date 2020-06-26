@@ -55,6 +55,7 @@ private TextInputLayout cityInput;
                 request.setStatus("En cours de traitement");
                 request.setPhoneNumber(phoneNumber.getEditText().getText().toString());
                 request.setDate(now);
+                request.setUserId(FirebaseAuth.getInstance().getUid());
                 FirebaseDatabase.getInstance().getReference("Request").push().setValue(request);
                 finish();
             }
