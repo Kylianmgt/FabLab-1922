@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">FabLab-19</string>
+    <string name="presentation">Application permettant de contacter le FabLab afin de pouvoir Organiser une création de prototype our ce proteger du COVID-19</string>
+    <string name="title_app">FabLab-19</string>
+    <string name="passer_commande">Passer une commande</string>
+    <string name="contact">Contactez le gestionnaire de FabLab</string>
+    <string name="se_deconnecter">Se déconnecter</string>
+    <string name="inscrption_connexion">Inscription / Se connecter</string>
+    <string name="text_page_connexion">Maintenant vous êtes connecter vous pousser donc accéder à d autres fonctionnalités du site voir les boutons au dessus</string>
 </resources>

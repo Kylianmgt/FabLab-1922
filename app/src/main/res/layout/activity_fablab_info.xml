@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_medium"
+        android:gravity="center"
+        android:text="FabLab-19"
+        android:textSize="40sp" />
+
+    <ImageView
+        android:id="@+id/img_fablab"
+        android:layout_width="match_parent"
+        android:layout_height="162dp"
+        app:srcCompat="@drawable/fablab" />
+
+    <TextView
+        android:id="@+id/card_number_order_current"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Nombre de commandes en cours" />
+
+    <TextView
+        android:id="@+id/card_number_order_end"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Nombre de commandes fini" />
+
+
+</LinearLayout>
