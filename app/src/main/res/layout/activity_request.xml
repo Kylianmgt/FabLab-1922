@@ -50,10 +50,22 @@
         android:inputType="textPostalAddress" />
 
     <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/phone_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/postal_address_input"
+        android:hint="Numéro sur lequel vous êtes joignable">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/resume_input"
         android:layout_width="match_parent"
         android:layout_height="254dp"
-        android:layout_below="@id/postal_address_input"
+        android:layout_below="@id/phone_input"
         android:hint="Faites un cours texte sur ce dont vous avez besoin">
 
         <com.google.android.material.textfield.TextInputEditText

@@ -4,29 +4,107 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
+
     tools:context=".HomeActivity">
 
     <TextView
-        android:id="@+id/welcome_title"
+        android:id="@+id/home_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_medium"
         android:gravity="center"
-        android:text="Bienvenue ..." />
+        android:text="@string/title_app"
+        android:textSize="40sp" />
+
+    <TableLayout
+        android:id="@+id/nav_buttons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/home_title">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <com.ornach.nobobutton.NoboButton
+                android:id="@+id/button_passer_commande"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:padding="10dp"
+                app:nb_backgroundColor="#EF3D56"
+                app:nb_borderColor="#FFFFFF"
+                app:nb_borderWidth="2dp"
+                app:nb_focusColor="#B83CC3"
+                app:nb_radius="5dp"
+                app:nb_text="@string/passer_commande"
+                app:nb_textColor="#FFF" />
+
+            <com.ornach.nobobutton.NoboButton
+
+                android:id="@+id/button_info_fablab"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:padding="10dp"
+                app:nb_backgroundColor="#EF3D56"
+                app:nb_borderColor="#FFFFFF"
+                app:nb_borderWidth="2dp"
+                app:nb_focusColor="#B83CC3"
+                app:nb_radius="5dp"
+
+                app:nb_text="Informations Fablab"
+
+                app:nb_textColor="#FFF" />
+
+            <com.ornach.nobobutton.NoboButton
+                android:id="@+id/contact_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:padding="10dp"
+                app:nb_backgroundColor="#EF3D56"
+                app:nb_borderColor="#FFFFFF"
+                app:nb_borderWidth="2dp"
+                app:nb_focusColor="#B83CC3"
+                app:nb_radius="5dp"
+                app:nb_text="@string/contact"
+                app:nb_textColor="#FFF" />
+        </TableRow>
+    </TableLayout>
 
     <ListView
         android:id="@+id/list_of_request"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/create_request_button">
-
+        android:layout_below="@id/nav_buttons">
     </ListView>
 
-    <Button
-        android:id="@+id/create_request_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/welcome_title"
-        android:text="Nouvelle demande" />
 
+    <TableLayout
+        android:id="@+id/img_logo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/list_of_request">
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+            <ImageView
+                android:id="@+id/img_cesi"
+                android:layout_width="226dp"
+                android:layout_height="164dp"
+                android:src="@drawable/logocesi" />
+
+            <ImageView
+                android:id="@+id/img_ue"
+                android:layout_width="188dp"
+                android:layout_height="match_parent"
+                android:src="@drawable/ue" />
+
+        </TableRow>
+    </TableLayout>
 </RelativeLayout>

@@ -35,7 +35,7 @@ dependencies {
     implementation 'com.ornach.nobobutton:nobobutton:1.6'
     implementation 'com.google.firebase:firebase-database:19.3.0'
     implementation 'com.firebaseui:firebase-ui-database:6.2.0'
-
+    implementation 'it.neokree:MaterialTabs:0.11'
 
 
 

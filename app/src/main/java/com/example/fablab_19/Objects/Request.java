@@ -2,6 +2,8 @@ package com.example.fablab_19.Objects;
 
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.Date;
+
 public class Request {
     private String name;
     private String firstName;
@@ -11,8 +13,28 @@ public class Request {
     private String companyName;
     private String companyPostalCode;
     private String companyCity;
-    private String date;
+    private long date;
     private String requestResume;
+
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
+    }
+
+    private String userId;
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    private String phoneNumber;
 
     public String getStatus() {
         return status;
@@ -48,11 +70,11 @@ public class Request {
         this.companyCity = companyCity;
     }
 
-    public String getDate() {
+    public long getDate() {
         return date;
     }
 
-    public void setDate(String date) {
+    public void setDate(long date) {
         this.date = date;
     }
 
