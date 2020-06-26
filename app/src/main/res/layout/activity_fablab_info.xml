@@ -21,15 +21,17 @@
         android:layout_height="162dp"
         app:srcCompat="@drawable/fablab" />
 
-    <ListView
-        android:id="@+id/list_of_info"
+    <TextView
+        android:id="@+id/card_number_order_current"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:text="Nombre de commandes en cours" />
 
-    </ListView>
-
-
-
+    <TextView
+        android:id="@+id/card_number_order_end"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Nombre de commandes fini" />
 
 
 </LinearLayout>
